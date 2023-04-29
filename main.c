@@ -11,29 +11,22 @@
 int main() {
 
 
-    char dat[10] = "head";
+    int d = 4;
+    List *list = List_Create(&d, sizeof(int)); // create list with integer data
 
-    var list = List_Create(dat, strlen(dat) + 1);
+    int y = 23;
+    List_Append(list, (void *) &y, sizeof(int *));
+
+    int m = 28;
+    List_Insert(list, (void *) &m, sizeof(int *), 1);
 
 
-    for (int i = 0; i < 4; i++) {
-
-        sprintf(dat, "%d", i + 1);
-
-        List_Append(list, (void *) dat, sizeof(int *));
+    Node *cur = list->head;
+    while (cur != NULL) {
+        int *dat = (int *) cur->data;
+        printf("%d\n", *dat);
+        cur = cur->next;
     }
-
-    printf("%d\n", list->length);
-
-    List_Print(list);
-
-    printf("\n");
-
-    char nDat[10] = "new Data";
-    List_Insert(list, nDat, sizeof(nDat) + 1, 0);
-
-
-    List_Print(list);
 
     return 0;
 }

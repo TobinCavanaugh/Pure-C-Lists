@@ -62,7 +62,7 @@ List *List_Create(const void *initialData, const size_t dataSize) {
     return newList;
 }
 
-/// TESTED\n
+/// NOT RECOMMENDED FOR USE, WORKS FOR STRING LISTS BUT NOT MUCH ELSE
 /// Turns the list into a string
 /// \param list
 /// \param format First parameter is %s for the data, the second is %d for the index
@@ -101,8 +101,7 @@ char *List_ToString(List *list, const char *format) {
     size_t bytesWritten = 0;
 
     while (currentNode != NULL) {
-        bytesWritten += snprintf(outputString + bytesWritten, outputSize - bytesWritten, format, currentNode->data,
-                                 counter);
+        bytesWritten += snprintf(outputString + bytesWritten, outputSize - bytesWritten, format, currentNode->data, counter);
         currentNode = currentNode->next;
         counter++;
     }
@@ -110,7 +109,7 @@ char *List_ToString(List *list, const char *format) {
     return outputString;
 }
 
-/// TESTED\n
+/// NOT RECOMMENDED FOR USE, WORKS FOR STRING LISTS BUT NOT MUCH ELSE
 /// Prints the list gotten from list to string using the format "%s (%d)\n"
 /// \param list
 void List_Print(List *list) {

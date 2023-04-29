@@ -32,9 +32,9 @@ void List_Insert(List *list, const void *inData, const size_t dataSize, const un
 
 void List_Append(List *list, const void *inData, const size_t dataSize);
 
-void List_Print(List *list);
+//void List_Print(List *list);
 
-char *List_ToString(List *list, const char *format);
+//char *List_ToString(List *list, const char *format);
 
 List *List_Create(const void *initialData, const size_t dataSize);
 
