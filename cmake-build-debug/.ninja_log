@@ -1,0 +1,8 @@
+# ninja log v5
+2	93	7044462347033675	CMakeFiles/ListTest_.dir/main.c.obj	54c99be247ea4337
+8	98	7044462347083716	CMakeFiles/ListTest_.dir/List.c.obj	bb3461cf208bff70
+98	207	7044462348136530	ListTest_.exe	5d9fd6e77f82d7a3
+2	117	7044463231350654	build.ninja	712e1f9530181e16
+2	95	7044467043418233	CMakeFiles/ListTest_.dir/main.c.obj	54c99be247ea4337
+8	97	7044467043448249	CMakeFiles/ListTest_.dir/List.c.obj	bb3461cf208bff70
+98	211	7044467044549290	ListTest_.exe	5d9fd6e77f82d7a3
