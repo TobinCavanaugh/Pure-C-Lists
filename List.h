@@ -1,6 +1,4 @@
-//
-// Created by tobin on 4/27/2023.
-//
+
 #include <memory.h>
 
 #ifndef LISTTEST__LIST_H
