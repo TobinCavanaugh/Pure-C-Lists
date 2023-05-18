@@ -22,22 +22,11 @@ int main() {
     int m = 28;
     List_Insert(list, (void *) &m, sizeof(int *), 1);
 
-    //Get the head of the node
-    Node *cur = list->head;
+    List_Iterate(list, Iter);
 
-    //Iterate through the nodes until we run out, you could also use list->length
-//    while (cur != NULL) {
-//        //Get the int pointer in the current nodes data
-//        int *dat = (int *) cur->data;
-//
-//        //Print it
-//        printf("%d\n", *dat);
-//
-//        //Move to the next node
-//        cur = cur->next;
-//    }
+    int a = 12;
+    printf("\n%d",List_Contains(list, (void *) &d, sizeof(int)));
 
-    List_Iterate(list, &Iter);
 
     List_Clear(list);
 

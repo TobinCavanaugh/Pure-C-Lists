@@ -37,3 +37,5 @@ void List_PrintConnections(List *list, const char *format);
 void List_Clear(List *list);
 
 void List_Iterate(List *list, void (*Iterator)(Node *));
+
+int List_Contains(List *list, void *data, size_t size);

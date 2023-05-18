@@ -367,3 +367,27 @@ void List_Iterate(List *list, void (*Iterator)(Node *)) {
         next = next->next;
     }
 }
+
+/// Does the List contain the data? USes memcmp
+/// \param list
+/// \param data The data to check for
+/// \param size The size of the data
+/// \return -1 for couldnt be found, anything else is an index
+int List_Contains(List *list, void *data, size_t size) {
+    Node *next = list->head;
+
+    int index = -1;
+
+    // Iterate through all the elements
+    while (next != NULL) {
+        index++;
+
+        if (memcmp(data, next->data, size) == 0) {
+            return index;
+        }
+
+        next = next->next;
+    }
+
+    return -1;
+}
