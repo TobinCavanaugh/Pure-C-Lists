@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include "List.h"
 
+void Iter(Node * node){
+    int *dat = (int *) node->data;
+
+    //Print it
+    printf("%d\n", *dat);
+}
+
 int main() {
 
     //Create and initialize the list with the int d
@@ -19,16 +26,20 @@ int main() {
     Node *cur = list->head;
 
     //Iterate through the nodes until we run out, you could also use list->length
-    while (cur != NULL) {
-        //Get the int pointer in the current nodes data
-        int *dat = (int *) cur->data;
+//    while (cur != NULL) {
+//        //Get the int pointer in the current nodes data
+//        int *dat = (int *) cur->data;
+//
+//        //Print it
+//        printf("%d\n", *dat);
+//
+//        //Move to the next node
+//        cur = cur->next;
+//    }
 
-        //Print it
-        printf("%d\n", *dat);
+    List_Iterate(list, &Iter);
 
-        //Move to the next node
-        cur = cur->next;
-    }
+    List_Clear(list);
 
     return 0;
 }

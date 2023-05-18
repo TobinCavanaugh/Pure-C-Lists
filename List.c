@@ -101,7 +101,8 @@ char *List_ToString(List *list, const char *format) {
     size_t bytesWritten = 0;
 
     while (currentNode != NULL) {
-        bytesWritten += snprintf(outputString + bytesWritten, outputSize - bytesWritten, format, currentNode->data, counter);
+        bytesWritten += snprintf(outputString + bytesWritten, outputSize - bytesWritten, format, currentNode->data,
+                                 counter);
         currentNode = currentNode->next;
         counter++;
     }
@@ -328,4 +329,41 @@ void List_RemoveAtNode(List *list, Node *remove) {
 void List_RemoveAtIndex(List *list, const unsigned int index) {
     var removeNode = List_NodeAt(list, index);
     List_RemoveAtNode(list, removeNode);
+}
+
+/// Sets the list length to 0 and frees any nodes
+/// \param list
+void List_Clear(List *list) {
+    Node *current = list->head;
+
+    // Iterate through all the elements and free them all
+    while (current != NULL) {
+        Node *next = current->next;
+
+        // Print the data before removing the node
+//        int *data = (int *) current->data;
+//        printf("%d ", *data);
+
+        List_RemoveAtNode(list, current);
+
+        current = next;
+    }
+
+    list->head = NULL;
+    list->length = 0;
+}
+
+/// Iterate through the list, at each index, call the Iterator function with the current node
+/// \param list
+/// \param Iterator
+void List_Iterate(List *list, void (*Iterator)(Node *)) {
+    Node *next = list->head;
+
+    // Iterate through all the elements and free them all
+    while (next != NULL) {
+
+        Iterator(next);
+
+        next = next->next;
+    }
 }
