@@ -78,9 +78,9 @@ add_executable(PureCLists main.c List.c)
 ```
 
 #### Methods:
-![image showing the methods of the list.h file](git/header.png "Methods")
+![image showing the methods of the list.h file](git/header.png? "Methods")
 
 #### Structs:
-![image structs in the list.h file](git/typedef.png "Structs")
+![image structs in the list.h file](git/typedef.png? "Structs")
 
 I began learning C about 5 days ago as of this readme, so let me know if any of my code contains memory leaks or just bad ideas.
