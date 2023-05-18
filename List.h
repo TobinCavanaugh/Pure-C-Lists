@@ -33,6 +33,8 @@ void List_Insert(List *list, const void *inData, const size_t dataSize, const un
 
 void List_Iterate(List *list, void (*Iterator)(Node *));
 
+Node *List_NodeAt(List *list, const unsigned int index);
+
 void List_PrintConnections(List *list, const char *format);
 
 void List_RemoveAtIndex(List *list, const unsigned int index);
@@ -41,4 +43,3 @@ void List_RemoveAtNode(List *list, Node *remove);
 
 void List_Reverse(List *list);
 
-Node *List_NodeAt(List *list, const unsigned int index);
