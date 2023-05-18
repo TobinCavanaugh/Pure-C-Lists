@@ -391,3 +391,14 @@ int List_Contains(List *list, void *data, size_t size) {
 
     return -1;
 }
+
+/// Destroys the list, freeing any associated data
+/// \param list
+void List_Destroy(List *list) {
+    if(list == NULL){
+        return;
+    }
+
+    List_Clear(list);
+    free(list);
+}
