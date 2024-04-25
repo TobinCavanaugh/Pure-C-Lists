@@ -216,6 +216,8 @@ void List_Insert(List *list, const void *inData, const size_t dataSize, const un
 
     parent->next = newNode;
     newNode->next = grandChild;
+
+    list->length++;
 }
 
 /// TESTED\n
